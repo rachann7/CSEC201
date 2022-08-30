@@ -12,6 +12,7 @@ int main(void) {
     printf("Base of the array: %p\n", word);
     for(int i=0; i<strlen(word); i++) {  // "strlen" -> string ptr (beginning of the array) and it counts up until it finds a null character
         // printf("%p - %c\n", &(word[i]), word[i]);
-        printf("%p -%c, %c\n", &(word[i]), word[i], *(&(word[i])));
+        // printf("%p -%c, %c\n", &(word[i]), word[i], *(&(word[i])));
+        printf("%p - %c, %c\n", &(word[i]), word[i], (char)(((int)word[i])+i) );
     }
 }
