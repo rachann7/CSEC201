@@ -8,5 +8,9 @@
 int main(void) {
     char word[10]; //create a string of max length 20, indices are 0-19
     scanf("%s", word); // this will get input from the user and store it into "word"
-    printf("%s", word); //echo input back
+    // printf("%s", word); echo input back
+
+    for(int i=0; i <10; i++) {
+        printf("%c\n", word[i]);
+    }
 }
