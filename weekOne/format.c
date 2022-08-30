@@ -9,4 +9,5 @@ int main() {
     printf("%f\n", x); //%f is float values
     printf("%c\n", ch); //%c is Character
     printf("%ld\n", la); //%ld is Long 
+    return 0;
 }
