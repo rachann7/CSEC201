@@ -23,7 +23,7 @@ int main(void) {
     }
 
     if(strcmp(first, second) == 0) {
-        printf("dentical\n");
+        printf("Identical\n");
     }
     else{
         printf("Not Indentical\n");
