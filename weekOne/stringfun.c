@@ -16,5 +16,18 @@ int main(void) {
         printf("\t%p - %c\n", &(second[i]), second[i]);
     }
 
+    printf("%s %s\n", first, second);
+
+    if(strlen(first) != strlen(second)) {
+        printf("Not identical\n");
+    }
+
+    if(strcmp(first, second) == 0) {
+        printf("dentical\n");
+    }
+    else{
+        printf("Not Indentical\n");
+    }
+
     return 0;
 }
