@@ -51,6 +51,29 @@ void printlist(struct linkedlist* list) {
     }
 }
 
+void searchaddestroy(struct linkedlist* list, int value) {
+    // List is not initialized
+    if(list==NULL) {
+        return;  // if the list is not initialized, bail out
+    }
+    // Find value 
+    //Value could be at the head
+    struct node* temp = list->head;
+    if(temp->data == value) {
+        list->head == temp->next;
+        // or 
+        // list -> head = list -> head -> next
+        free(temp); // free is going to look at what temp is pointing at, and recycles it
+        list->size--;
+        return;
+    }
+    //Value could be in the middle
+    //Value could be at the end
+
+    //Don't find value
+}
+
+
 int main(void) {
     struct linkedlist* list = initalize();
     add(list, 10);
@@ -58,5 +81,4 @@ int main(void) {
     add(list, -1);
     add(list, 5);
     printlist(list);
-    return 0;
 }
