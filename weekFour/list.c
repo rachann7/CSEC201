@@ -15,12 +15,19 @@ struct linkedlist{
     struct node * head;
 };
 
-struct linkedlist * initalize(void) {
+struct linkedlist* initalize(void) {
+    //BAD IDEA: return struct linkedlist intialize(void) {}
+
     struct linkedlist * newlist = NULL; // Create a new linkedlist pointer on the stack
+    //BAD IDEA: struct linkedlist newlist;
+
     newlist = (struct linkedlist*) malloc(sizeof(struct linkedlist));
+    // BAD IDEA: skip
     newlist->size=0; // using the -> because newlist is a pointer 
                      // if newlist wasn't a pointer, we would use a . (ex: newlist.size)
+    //newlist.size = 0;
     newlist->head=NULL;
+    //newlist.head=NULL;
 
     return newlist; // returns what new list points at 
 }
@@ -45,7 +52,7 @@ void printlist(struct linkedlist* list) {
 }
 
 int main(void) {
-    struct linkedlist* list = initialize();
+    struct linkedlist* list = initalize();
     add(list, 10);
     add(list, 20);
     add(list, -1);
