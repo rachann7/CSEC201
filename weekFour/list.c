@@ -45,7 +45,7 @@ void add(struct linkedlist * list, int value) {
 
 void printlist(struct linkedlist* list) {
     struct node* temp = list->head;
-    while(temp!=NULL) {
+    while(temp!=NULL) { // loop until end of list
         printf("Node Address: %p, Node Address: %d\n", temp, temp->data);
         temp = temp->next;
     }
@@ -67,10 +67,16 @@ void searchaddestroy(struct linkedlist* list, int value) {
         list->size--;
         return;
     }
-    //Value could be in the middle
-    //Value could be at the end
-
-    //Don't find value
+    //Value could be in the middle [or end]
+    while(temp->next !=NULL) {// loop until we hit the last node
+        if(temp->next->data == value) {
+            struct node * toBeDeleted = temp->next; // note the thing I want to get rid of
+            temp->next = temp->next->next;
+            free(toBeDeleted);
+            list->size--;
+            return;
+        }
+    }
 }
 
 
